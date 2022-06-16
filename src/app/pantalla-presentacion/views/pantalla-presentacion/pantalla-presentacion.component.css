@@ -1,0 +1,55 @@
+.navbar{
+    border-bottom: 25px solid #FFD966;
+    outline: 8px solid #004A79;
+    padding: 5px 15px;
+}
+
+.caja-titulo{
+    padding-left: 20px;
+}
+
+.titulo{
+    text-align: center;
+    color: #004A79;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.caja1{
+    padding: 50px;
+}
+
+.caja-indicaciones{
+    background-color: #2E75B6;
+    border-bottom: 10px solid #FFD966;
+    padding: 25px;
+}
+
+.color-texto{
+    color: white;
+}
+
+.subtitulo{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.descripcion{
+    font-size: 13px;
+}
+
+.formato-boton{
+    padding: 3px 25px;
+    color: #004A79;
+    font-weight: bold;
+}
+
+#footer{
+    padding: 20px;
+    background-color: #043045;
+    color: rgb(123, 123, 123);
+}
+
+#footer .col-12 h5{
+    font-size: 12px;
+}
