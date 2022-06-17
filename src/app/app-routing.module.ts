@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EjemploComponent } from './core/presentation/ejemplo/ejemplo.component';
-import { PantallaPresentacionComponent } from './pantalla-presentacion/views/pantalla-presentacion/pantalla-presentacion.component';
+// import { EjemploComponent } from './core/presentation/ejemplo/ejemplo.component';
 
 const routes: Routes = [
-  {path:'',component: PantallaPresentacionComponent}
+  // {path:'',component: EjemploComponent}
 ];
 
 @NgModule({
