@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EjemploComponent } from './presentation/ejemplo/ejemplo.component';
 import { LoginComponent } from './login/login.component';
-
+import { PantallaPresentacionComponent } from './pantalla-presentacion/pantalla-presentacion.component';
 
 
 @NgModule({
   declarations: [
-    EjemploComponent,
-    LoginComponent
+    LoginComponent,
+    PantallaPresentacionComponent
   ],
   imports: [
     CommonModule
