@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { PantallaPresentacionComponent } from './pantalla-presentacion/pantalla-presentacion.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ComponentsModule } from '../components/components.module';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent }
@@ -11,12 +12,13 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     LoginComponent,
-    PantallaPresentacionComponent
+    PantallaPresentacionComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ComponentsModule
   ]
 })
 export class CoreModule { }
