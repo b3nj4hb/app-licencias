@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { PantallaPresentacionComponent } from './pantalla-presentacion/pantalla-presentacion.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  { path: 'login', component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
@@ -10,7 +14,9 @@ import { PantallaPresentacionComponent } from './pantalla-presentacion/pantalla-
     PantallaPresentacionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    RouterModule.forRoot(routes)
   ]
 })
 export class CoreModule { }
