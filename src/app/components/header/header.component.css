@@ -7,3 +7,8 @@
     background: linear-gradient(90deg, #4099FF 0%, #6E7FF3 100%);
     position: fixed;
 }
+
+img {
+    width: fit-content;
+    height: 100%;
+}
