@@ -6,7 +6,7 @@ import { PagosComponent } from './pagos/pagos.component';
 import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
-  {path: 'expendiente', component: ExpedienteComponent},
+  {path: 'expediente', component: ExpedienteComponent},
   {path: 'pagos', component: PagosComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'anexos', component: AnexosComponent},
