@@ -1,0 +1,33 @@
+.todo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#cuerpo {
+    margin-top: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#centro {
+    display: flex;
+    justify-content: center;
+}
+/* :not( #zzz input) {
+    min-width: 217px; 
+} */
+#sec,#zzz {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+#zzz div{
+    max-width: fit-content;
+    min-width: 3rem;
+}
+#botones {
+    display: flex;
+}
