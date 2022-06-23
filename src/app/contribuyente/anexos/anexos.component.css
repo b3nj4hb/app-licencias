@@ -6,3 +6,38 @@
     color: white;
     font-weight: bold;
 }
+
+.caja-anexo{
+    background-color: #cfcfcf;
+    padding: 14px;
+    padding-top: 10px;
+}
+
+.formato-btn{
+    color: white;
+    width: 8rem;
+}
+
+.color-btn{
+    background-color: #3482cb;
+}
+
+.caja-titulo-desc{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.icon-info{
+    text-align: center;
+    margin-top: 4px;
+}
+
+#advertencia{
+    color: red;
+    font-size: small;
+}
+
+.icon-vista{
+    cursor: pointer;
+}
