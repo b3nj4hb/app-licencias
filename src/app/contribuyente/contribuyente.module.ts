@@ -7,6 +7,7 @@ import { AnexosComponent } from './anexos/anexos.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { ExpedienteComponent } from './expediente/expediente.component';
 import { ComponentsModule } from '../components/components.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     ContribuyenteRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
   ]
 })
 export class ContribuyenteModule { }

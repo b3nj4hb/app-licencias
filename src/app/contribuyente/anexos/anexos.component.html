@@ -1,2 +1,127 @@
 <app-header></app-header>
-<p>anexos works!</p>
+<div class="container" style="margin-top: 80px;">
+    <div class="row">
+        <div id="titulo" class="col-12">
+            <h4>DESCARGAR ANEXOS</h4>
+        </div>
+    
+        <div class="col-12 mt-4">
+            <div class="row">
+                <div class="col-5 d-flex flex-column gap-3">
+                    <div class="row caja-anexo">
+                        <div class="col-12 caja-titulo-desc">
+                            <div class="d-flex gap-2 mt-2">
+                                <h5 class="mt-1">Anexo 1:</h5>
+                                <span class="material-icons-outlined icon-info">
+                                    info
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                            <input #Pdf class="form-control" type="file" id="formFile">
+                            <span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
+                                visibility
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row caja-anexo">
+                        <div class="col-12 caja-titulo-desc">
+                            <div class="d-flex gap-2 mt-2">
+                                <h5 class="mt-1">Anexo 2:</h5>
+                                <span class="material-icons-outlined icon-info">
+                                    info
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                            <input #Pdf class="form-control" type="file" id="formFile">
+                            <span (click)="mostrarPDF(1)" class="material-icons-outlined icon-vista">
+                                visibility
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row caja-anexo">
+                        <div class="col-12 caja-titulo-desc">
+                            <div class="d-flex gap-2 mt-2">
+                                <h5 class="mt-1">Anexo 3:</h5>
+                                <span class="material-icons-outlined icon-info">
+                                    info
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                            <input #Pdf class="form-control" type="file" id="formFile">
+                            <span (click)="mostrarPDF(2)" class="material-icons-outlined icon-vista">
+                                visibility
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row caja-anexo">
+                        <div class="col-12 caja-titulo-desc">
+                            <div class="d-flex gap-2 mt-2">
+                                <h5 class="mt-1">Anexo 4:</h5>
+                                <span class="material-icons-outlined icon-info">
+                                    info
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                            <input #Pdf class="form-control" type="file" id="formFile">
+                            <span (click)="mostrarPDF(3)" class="material-icons-outlined icon-vista">
+                                visibility
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row caja-anexo">
+                        <div class="col-12 caja-titulo-desc">
+                            <div class="d-flex gap-2 mt-2">
+                                <h5 class="mt-1">Anexo 5:</h5>
+                                <span class="material-icons-outlined icon-info">
+                                    info
+                                </span>
+                            </div>
+                            <div class="mt-1">
+                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                            <input #Pdf class="form-control" type="file" id="formFile">
+                            <span (click)="mostrarPDF(4)" class="material-icons-outlined icon-vista">
+                                visibility
+                            </span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-7" style="text-align: center;">
+                    <embed #mostrador type="application/pdf" width="80%" height="80%">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mt-3">
+                    <h5 id="advertencia">* Advertencia: Subir archivos en formato PDF</h5>                                
+                </div>
+                <div id="comandos" class="col-6 d-flex justify-content-end gap-3 mb-3">
+                    <button type="button" class="btn btn-light formato-btn color-btn">Cancelar</button>
+                    <button type="button" class="btn btn-success formato-btn">Siguiente</button>                                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
