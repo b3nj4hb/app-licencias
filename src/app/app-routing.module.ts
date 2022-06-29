@@ -10,7 +10,7 @@ import { PantallaPresentacionComponent } from './core/pantalla-presentacion/pant
 const routes: Routes = [
   { path: '', component: PantallaPresentacionComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'pagos', component: PagosComponent},
+
   { path: 'contribuyente', loadChildren: () => import('./contribuyente/contribuyente.module').then((m) => m.ContribuyenteModule) }
 
 ];
