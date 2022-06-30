@@ -3,20 +3,21 @@
     <div id="cuerpo">
         <form id="sec">
             <div class="mb-2">
-                <label class="form-label">TIPO DE CONTIBUYENTE</label>
+                <label class="form-label">TIPO DE CONTRIBUYENTE</label>
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="tipo-contribuyente"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        TIPO DE CONTIBUYENTE
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="tipo-contribuyente">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Tipo de contribuyente</option>
+                        <option>Seleccionar Sesion</option>
+                        <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+                    </select>
                 </div>
 
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputPassword1" class="form-label">CONTIBUYENTE</label>
+                <div class="input-group mb-2" type="button">
+                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                </div>
             </div>
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">N° RUC</label>
@@ -37,13 +38,12 @@
                 </div>
             </div>
             <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">CONTIBUYENTE</label>
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="tipo-contribuyente"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        TIPO DE DOCUMENTO
-                    </a>
-                </div>
+                <label for="exampleInputPassword1" class="form-label">TIPO DOCUMENTO</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>seleccionar tipo documento</option>
+                    <option>Seleccionar Sesion</option>
+                    <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+                </select>
             </div>
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">N° DE DOCUMENTO</label>
@@ -62,10 +62,11 @@
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">PROVINCIA</label>
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="tipo-contribuyente"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        LIMA
-                    </a>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar provincia</option>
+                        <option>Seleccionar Sesion</option>
+                        <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+                    </select>
                 </div>
             </div>
             <div class="mb-2">
