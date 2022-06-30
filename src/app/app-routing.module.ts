@@ -10,13 +10,13 @@ const routes: Routes = [
   { path: '', component: PantallaPresentacionComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contribuyente', loadChildren: () => import('./contribuyente/contribuyente.module').then((m) => m.ContribuyenteModule) }
-
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    ComponentsModule
+    ComponentsModule,
+    CoreModule
   ],
   exports: [RouterModule]
 })
