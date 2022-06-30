@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
-
+import { Storage, ref ,uploadBytes } from '@angular/fire/storage'; 
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,7 +16,7 @@ export class AnexosComponent implements OnInit {
     read: ElementRef
   }) mostrador?: ElementRef;
 
-  constructor(private renderer: Renderer2 ) { 
+  constructor(private renderer: Renderer2, private storage: Storage ) { 
     
   }
 
@@ -39,6 +39,19 @@ export class AnexosComponent implements OnInit {
     
   }
 
+  
+    uploadImage($event: any){
+      const file = $event.target.files[0];
+      console.log(file);
+
+      const imgRef = ref(this.storage,`images/${file.name}`);
+      
+      uploadBytes(imgRef, file)
+      .then()
+      .catch(error => console.log(error));
+    }
+
+
   mostrarInfo(){
     Swal.fire({
       title: 'Anexo 1',
@@ -46,6 +59,8 @@ export class AnexosComponent implements OnInit {
       text: 'Hola'
     })
   }
+
+
 
 }
 
