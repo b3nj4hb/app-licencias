@@ -10,7 +10,7 @@ import { persona } from "../classes/persona";
 
 export class personaService {
     httpOptions = {
-        Headers: new HttpHeaders({ 'Content-Type': 'applicatoin/json' })
+        Headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     private url: string = 'https://app-licencias.herokuapp.com/api/auth'
     constructor(private http: HttpClient, private router: Router) { }
