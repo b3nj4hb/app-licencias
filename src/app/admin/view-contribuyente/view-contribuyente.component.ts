@@ -9,15 +9,21 @@ import { personaService } from 'src/app/services/contribuyente.service';
 })
 export class ViewContribuyenteComponent implements OnInit {
   persona: persona[] = [];
+  personacrear = new persona;
   constructor(private perService: personaService) { }
 
   ngOnInit(): void {
     this.listarPersona();
   }
   listarPersona() {
-    this.perService.getPersonas().subscribe(data => {
+    this.perService.list().subscribe(data => {
       this.persona = data;
       console.log(this.persona)
     })
+  }
+  crearPersona() {
+    this.personacrear.idpersona = Number(this.personacrear.idpersona)
+    this.perService.save(this.personacrear).subscribe(data => { console.log(data) })
+    console.log(this.personacrear)
   }
 }
