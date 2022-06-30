@@ -31,4 +31,5 @@ export class ViewVoucherComponent implements OnInit {
     })
     .catch(error => console.log(error))
   }
+  
 }
