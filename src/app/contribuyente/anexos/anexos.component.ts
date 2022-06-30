@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-anexos',
@@ -35,6 +36,14 @@ export class AnexosComponent implements OnInit {
     this.renderer.setAttribute(this.mostrador?.nativeElement,'src',pdfurl);
 
     
+  }
+
+  mostrarInfo(){
+    Swal.fire({
+      title: 'Anexo 1',
+      icon: 'info',
+      text: 'Hola'
+    })
   }
 
 }

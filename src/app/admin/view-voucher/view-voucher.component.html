@@ -2,4 +2,5 @@
 <app-header></app-header>
 <div class="images">
     <img [src]="image" *ngFor="let image of images" width="200">
+    <a class="btn btn-success" *ngFor="let image of images" href="{{image}}" target="_blank">Hazme click</a>
   </div>

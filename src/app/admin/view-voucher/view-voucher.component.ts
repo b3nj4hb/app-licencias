@@ -27,6 +27,7 @@ export class ViewVoucherComponent implements OnInit {
       for (let item of response.items){
         const url = await getDownloadURL(item);
         this.images.push(url)
+        console.log(url)
       }
     })
     .catch(error => console.log(error))
