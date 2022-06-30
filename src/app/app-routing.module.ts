@@ -9,7 +9,8 @@ import { PantallaPresentacionComponent } from './core/pantalla-presentacion/pant
 const routes: Routes = [
   { path: '', component: PantallaPresentacionComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'contribuyente', loadChildren: () => import('./contribuyente/contribuyente.module').then((m) => m.ContribuyenteModule) }
+  { path: 'contribuyente', loadChildren: () => import('./contribuyente/contribuyente.module').then((m) => m.ContribuyenteModule) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule) }
 ];
 
 @NgModule({
