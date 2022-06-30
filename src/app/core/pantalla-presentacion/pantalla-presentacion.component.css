@@ -2,17 +2,15 @@
     border-bottom: 25px solid #FFD966;
     outline: 8px solid #004A79;
     padding: 5px 15px;
-}
-
-.caja-titulo{
-    padding-left: 20px;
+    margin-right: 0px;
 }
 
 .titulo{
-    text-align: center;
+    text-align: left;
     color: #004A79;
     font-size: xx-large;
     font-weight: bold;
+    padding-left: 10px;
 }
 
 .caja1{
@@ -52,4 +50,11 @@
 
 #footer .col-12 h5{
     font-size: 12px;
+}
+
+#boton-admin{
+    color: rgb(255, 255, 255);
+    background-color: #2E75B6;
+    margin-left: 30px;
+    padding: 10px 25px;
 }
