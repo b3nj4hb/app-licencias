@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/classes/persona';
+import { persona } from 'src/app/classes/classes';
 import { personaService } from 'src/app/services/contribuyente.service';
 
 @Component({

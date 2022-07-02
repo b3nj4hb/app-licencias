@@ -7,8 +7,7 @@
                 <div class="dropdown">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Tipo de contribuyente</option>
-                        <option>Seleccionar Sesion</option>
-                        <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+                        <option [value] = "tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
                     </select>
                 </div>
 
