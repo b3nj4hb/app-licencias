@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { Storage, ref ,uploadBytes } from '@angular/fire/storage'; 
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-anexos',
@@ -14,7 +16,7 @@ export class AnexosComponent implements OnInit {
     read: ElementRef
   }) mostrador?: ElementRef;
 
-  constructor(private renderer: Renderer2 ) { 
+  constructor(private renderer: Renderer2, private storage: Storage ) { 
     
   }
 
@@ -36,6 +38,68 @@ export class AnexosComponent implements OnInit {
 
     
   }
+
+  
+    uploadImage($event: any){
+      const file = $event.target.files[0];
+      console.log(file);
+
+      const imgRef = ref(this.storage,`images/${file.name}`);
+      
+      uploadBytes(imgRef, file)
+      .then()
+      .catch(error => console.log(error));
+    }
+
+
+  mostrarInfo(num:number){
+    switch (num) {
+      case 1:
+        Swal.fire({
+          title: 'Anexo 1 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          icon: 'info',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+        })
+      break;
+      
+      case 2:
+        Swal.fire({
+          title: 'Anexo 2 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          icon: 'info',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+        })
+      break;
+
+      case 3:
+        Swal.fire({
+          title: 'Anexo 3 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          icon: 'info',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+        })
+      break;
+
+      case 4:
+        Swal.fire({
+          title: 'Anexo 4 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          icon: 'info',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+        })
+      break;
+
+      case 5:
+        Swal.fire({
+          title: 'Anexo 5 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          icon: 'info',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+        })
+      break;
+    
+      default:
+        break;
+    }
+  }
+
+
 
 }
 
