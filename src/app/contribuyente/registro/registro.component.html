@@ -7,7 +7,7 @@
                 <div class="dropdown">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Tipo de contribuyente</option>
-                        <option [value] = "tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
+                        <option [value]="tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
                     </select>
                 </div>
 
@@ -18,7 +18,7 @@
                     <input type="text" class="form-control" aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
+            <!-- <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">N° RUC</label>
                 <div class="input-group mb-2" type="button">
                     <input type="text" class="form-control" aria-label="Text input with checkbox">
@@ -26,7 +26,7 @@
                         <span class="material-icons">search</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </form>
 
         <form id="sec">
@@ -39,9 +39,9 @@
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">TIPO DOCUMENTO</label>
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>seleccionar tipo documento</option>
-                    <option>Seleccionar Sesion</option>
-                    <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+                    <option selected>Tipo de documento</option>
+                    <option [value]="td.idtipo_documento" *ngFor="let td of tipoDocumento">{{td.tipo_documento}}
+                    </option>
                 </select>
             </div>
             <div class="mb-2">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </form>
-        <form id="sec">
+        <!-- <form id="sec">
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">URB./A.H./OTRO</label>
                 <div class="input-group mb-2" type="button">
@@ -62,9 +62,8 @@
                 <label for="exampleInputPassword1" class="form-label">PROVINCIA</label>
                 <div class="dropdown">
                     <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccionar provincia</option>
-                        <option>Seleccionar Sesion</option>
-                        <!-- <option [value] = " s.id" *ngFor="let s of digi3">{{s.nombre}}</option> -->
+                        <option selected>Provincia</option>
+                        <option [value] = "prov.idprovincia" *ngFor="let prov of provincia">{{prov.nombre}}</option>
                     </select>
                 </div>
             </div>
@@ -74,8 +73,8 @@
                     <input type="text" class="form-control" aria-label="Text input with checkbox">
                 </div>
             </div>
-        </form>
-        <form id="sec">
+        </form> -->
+        <!-- <form id="sec">
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">AV./JR./CL./PJE.</label>
                 <div class="input-group mb-2" type="button">
@@ -133,7 +132,7 @@
                 </div>
             </div>
 
-        </form>
+        </form> -->
         <form id="sec">
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">DIRECCIÓN DE NOTIFICACIÓN</label>
@@ -141,12 +140,12 @@
                     <input type="text" class="form-control" aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
+            <!-- <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">DISTRITO DE NOTIFICACIÓN</label>
                 <div class="input-group mb-2" type="button">
                     <input type="text" class="form-control" aria-label="Text input with checkbox">
                 </div>
-            </div>
+            </div> -->
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">CORREO ELECTRÓNICO</label>
                 <div class="input-group mb-2" type="button">
@@ -160,14 +159,15 @@
                 </div>
             </div>
         </form>
-    </div>
-    <div class="botones">
-        <div class="left">
-            <div type="button" class="btn btn-danger" [routerLink]="['/']">Cancelar</div>
+        <div class="botones">
+            <div class="left">
+                <div type="button" class="btn btn-danger" [routerLink]="['/']">Cancelar</div>
+            </div>
+            <div class="right">
+                <div type="button" class="btn btn-primary">Regresar</div>
+                <div type="button" class="btn btn-success" [routerLink]="['/contribuyente/anexos']">Siguiente</div>
+            </div>
         </div>
-        <div class="right">
-            <div type="button" class="btn btn-primary">Regresar</div>
-            <div type="button" class="btn btn-success" [routerLink]="['/contribuyente/anexos']">Siguiente</div>
-        </div>
     </div>
+
 </div>

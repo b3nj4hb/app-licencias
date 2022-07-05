@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { persona } from "../classes/classes";
-import { tipo_persona } from '../classes/classes';
 
 @Injectable({
     providedIn: 'root'
@@ -30,17 +29,5 @@ export class personaService {
     }
     delete(id: number) {
         return this.http.delete(`${this.url}/persona/delete/${id}`)
-    }
-}
-
-export class tipoPersonaService {
-    httpOptions = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-    private url: string = 'https://app-licencias.herokuapp.com/api/auth'
-    constructor(private http: HttpClient, private router: Router) { }
-
-    list(): Observable<tipo_persona[]> {
-        return this.http.get<tipo_persona[]>(this.url + '/tipo_persona');
     }
 }
