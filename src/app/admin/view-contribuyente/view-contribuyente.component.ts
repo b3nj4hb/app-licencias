@@ -9,7 +9,6 @@ import { personaService } from 'src/app/services/persona.service';
 })
 export class ViewContribuyenteComponent implements OnInit {
   persona: persona[] = [];
-  personacrear = new persona;
   constructor(private perService: personaService) { }
 
   ngOnInit(): void {
