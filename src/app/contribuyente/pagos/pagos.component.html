@@ -31,7 +31,7 @@
         display: flex;
         justify-content: center;
     }
-    button{}
+
 </style>
 
 
@@ -39,14 +39,14 @@
     <form id="form_crearEmpresa" method="POST" enctype="multipart/form-data">
         <div class="text-align-center ">
 
-            <h2 style="background-color: #4fa8fb;color:white;padding-top: 10px;padding-bottom: 10px;">
-                Baucher de Pago
+            <h2 style="background-color: #2E75B6;color:white;padding-top: 10px;padding-bottom: 10px;">
+                VOUCHER DE PAGO
             </h2>
         </div>
-        <div style="background-color: yellow; height:10px;margin-top: -10px; display: flex; "></div>
+        <div style="background-color: #FFD966; height:10px;margin-top: -10px; display: flex; "></div>
         <div class="content__admin " style="display: flex;">
-            <div style="border: 1px solid black; margin: 40px; width:500px">
-                <div style="background-color: #4fa8fb;">
+            <div style="border: 1px solid black; margin: 40px; width:500px; margin-left: 90px;">
+                <div style="background-color: #2E75B6;">
                     <h4 style="color:white; padding: 15px ;margin-top: 0px;">SUBIR VOUCHER DE PAGO DE INSPECCION</h4>
                 </div>
                 <div style="background-color: #d3d3d3;margin-top: -10px; padding: 15px;">
@@ -56,20 +56,24 @@
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-form-label">TIPO DE RIESGO:</label>
-                        <input type="text" class="form-control" name="EMP_INSTAGRAM" id="EMP_INSTAGRAM">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Seleccionar tipo de riesgo</option>
+                            <option>Seleccionar Sesion</option>
+                        </select>
                     </div>
+                    
                     <div class="form-group">
                         <label for="description" class="col-form-label">VOUCHER DE PAGO:</label>
                         <input type="file" class="form-control" name="CURS_IMAGEN" id="CURS_IMAGEN">
                     </div>
                     <div class="caja_button">
 
-                        <button type="submit" class="btn btn-primary ">SUBIR VOUCHER</button>
+                        <button type="submit" class="btn btn-primary ">SUBIR</button>
                     </div>
                 </div>
             </div>
             <div style="border: 1px solid black; margin: 40px; width:500px; background-color: #d3d3d3;">
-                <div style="background-color: #4fa8fb;">
+                <div style="background-color: #2E75B6;">
                     <h4 style="color:white; padding: 15px ;margin-top: 0px;">SUBIR VOUCHER DE PAGO DE INSPECCION</h4>
                 </div>
                 <div style="margin-top: -10px; padding: 15px;">
@@ -82,8 +86,8 @@
                         <label for="description" class="col-form-label">VOUCHER DE PAGO:</label>
                         <input type="file" class="form-control" name="CURS_IMAGEN" id="CURS_IMAGEN">
                     </div>
-                    <div class="caja_button">
-                        <button type="submit" class="btn btn-primary">SUBIR VOUCHER</button>
+                    <div class="caja_button" style="padding-top: 75px;">
+                        <button type="submit" class="btn btn-primary">SUBIR</button>
                     </div>
                 </div>
             </div>
