@@ -5,7 +5,8 @@
             <div class="mb-2">
                 <label class="form-label">TIPO DE CONTRIBUYENTE</label>
                 <div class="dropdown">
-                    <select class="form-select" aria-label="Default select example">
+                    <select (change)="obtenerIdTipoPersona($event)" [(ngModel)]="tipoPersonaCrear.idtipo_persona"
+                        name="idtipopersona" class="form-select" aria-label="Default select example">
                         <option selected>Tipo de contribuyente</option>
                         <option [value]="tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
                     </select>
@@ -13,32 +14,40 @@
 
             </div>
             <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">CONTRIBUYENTE</label>
+                <label for="exampleInputPassword1" class="form-label">NOMBRE</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input [(ngModel)]="personaCrear.nombre" name="nombre" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
                 </div>
             </div>
-            <!-- <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">N° RUC</label>
+            <div class="mb-2">
+                <label for="exampleInputPassword1" class="form-label">APELLIDO PATERNO</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    <div class="input-group-text">
-                        <span class="material-icons">search</span>
-                    </div>
+                    <input [(ngModel)]="personaCrear.ape_pat" name="nombre" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
                 </div>
-            </div> -->
+            </div>
+            <div class="mb-2">
+                <label for="exampleInputPassword1" class="form-label">APELLIDO MATERNO</label>
+                <div class="input-group mb-2" type="button">
+                    <input [(ngModel)]="personaCrear.ape_mat" name="nombre" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
+                </div>
+            </div>
         </form>
 
         <form id="sec">
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">N° RUC</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input [(ngModel)]="personaCrear.ruc" name="ruc" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
                 </div>
             </div>
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">TIPO DOCUMENTO</label>
-                <select class="form-select" aria-label="Default select example">
+                <select (change)="obtenerIdTipoDocumento($event)" [(ngModel)]="tipoDocumentoCrear.idtipo_documento"
+                    name="idtipodocumento" class="form-select" aria-label="Default select example">
                     <option selected>Tipo de documento</option>
                     <option [value]="td.idtipo_documento" *ngFor="let td of tipoDocumento">{{td.tipo_documento}}
                     </option>
@@ -47,127 +56,43 @@
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">N° DE DOCUMENTO</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input [(ngModel)]="personaCrear.num_documento" name="numdocumento" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
                 </div>
             </div>
         </form>
-        <!-- <form id="sec">
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">URB./A.H./OTRO</label>
-                <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                </div>
-            </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">PROVINCIA</label>
-                <div class="dropdown">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Provincia</option>
-                        <option [value] = "prov.idprovincia" *ngFor="let prov of provincia">{{prov.nombre}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">REGIMEN TRIBUTARIO</label>
-                <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                </div>
-            </div>
-        </form> -->
-        <!-- <form id="sec">
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">AV./JR./CL./PJE.</label>
-                <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                </div>
-            </div>
-            <div id="zzz">
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">NÚMERO</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">LETRA</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">INT.</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">LET.INT.</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">MZ</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">LOTE</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">BLOQUE</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label">DPTO.</label>
-                    <div class="input-group mb-2" type="button">
-                        <input type="text" class="form-control" aria-label="Text input with checkbox">
-                    </div>
-                </div>
-            </div>
-
-        </form> -->
         <form id="sec">
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">DIRECCIÓN DE NOTIFICACIÓN</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input [(ngModel)]="personaCrear.direccion_notificacion" name="direccion_notificacion" type="text"
+                        class="form-control" aria-label="Text input with checkbox">
                 </div>
             </div>
-            <!-- <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">DISTRITO DE NOTIFICACIÓN</label>
-                <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                </div>
-            </div> -->
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">CORREO ELECTRÓNICO</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input [(ngModel)]="personaCrear.correo" name="correo" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
                 </div>
             </div>
             <div class="mb-2">
                 <label for="exampleInputPassword1" class="form-label">TELÉFONO</label>
                 <div class="input-group mb-2" type="button">
-                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                    <input [(ngModel)]="personaCrear.telefono" name="telefono" type=" text" class="form-control"
+                        aria-label="Text input with checkbox">
                 </div>
             </div>
         </form>
         <div class="botones">
             <div class="left">
-                <div type="button" class="btn btn-danger" [routerLink]="['/']">Cancelar</div>
+                <div type="button" class="btn btn-primary" [routerLink]="['/']">Regresar</div>
             </div>
             <div class="right">
-                <div type="button" class="btn btn-primary">Regresar</div>
-                <div type="button" class="btn btn-success" [routerLink]="['/contribuyente/anexos']">Siguiente</div>
+                <div (click)="confirmar()" type="button" class="btn btn-success" >Confirmar</div>
             </div>
         </div>
     </div>
 
 </div>
+<!-- [routerLink]="['/contribuyente/anexos']" -->

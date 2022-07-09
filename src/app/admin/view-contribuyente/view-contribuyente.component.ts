@@ -21,9 +21,4 @@ export class ViewContribuyenteComponent implements OnInit {
       console.log(this.persona)
     })
   }
-  crearPersona() {
-    this.personacrear.idpersona = Number(this.personacrear.idpersona)
-    this.perService.save(this.personacrear).subscribe(data => { console.log(data) })
-    console.log(this.personacrear)
-  }
 }

@@ -21,13 +21,27 @@ export class persona_localidad {
     idlocalidad?: localidad;
 }
 
-export class persona {
+export class postpersona {
     idpersona?: number;
-    idtipo_persona?: tipo_persona;
+    idtipo_persona?: number;
     nombre?: string;
     ape_pat?: string;
     ape_mat?: string;
-    idtipo_documento?: tipo_documento;
+    idtipo_documento?: number;
+    num_documento?: string;
+    ruc?: string;
+    correo?: string;
+    direccion_notificacion?: string;
+    telefono?: number;
+}
+
+export class persona {
+    idpersona?: number;
+    idtipo_persona: tipo_persona = new tipo_persona;
+    nombre?: string;
+    ape_pat?: string;
+    ape_mat?: string;
+    idtipo_documento: tipo_documento = new tipo_documento;
     num_documento?: string;
     ruc?: string;
     correo?: string;

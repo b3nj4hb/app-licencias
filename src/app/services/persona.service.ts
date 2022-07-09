@@ -2,7 +2,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
-import { persona } from "../classes/classes";
+import { persona, postpersona } from "../classes/classes";
 
 @Injectable({
     providedIn: 'root'
@@ -21,8 +21,8 @@ export class personaService {
     search(id: number): Observable<any[]> {
         return this.http.get<any[]>(`${this.url}/persona/${id}`)
     }
-    save(post: persona): Observable<any> {
-        return this.http.post<persona>(this.url + '/persona/add', post, this.httpOptions)
+    save(post: postpersona): Observable<any> {
+        return this.http.post<any>(this.url + '/persona/add', post)
     }
     edit(id: number, upd: any) {
         return this.http.put(`${this.url}/persona/update/${id}`, upd)
