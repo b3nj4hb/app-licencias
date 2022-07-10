@@ -38,7 +38,6 @@ export class ViewVoucherComponent implements OnInit {
   }
   getImages(){
     const imagesRef =ref(this.storage, 'images');
-
     listAll(imagesRef)
     .then(async response =>{
       console.log(response);
