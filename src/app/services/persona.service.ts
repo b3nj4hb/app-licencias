@@ -30,4 +30,10 @@ export class personaService {
     delete(id: number) {
         return this.http.delete(`${this.url}/persona/delete/${id}`)
     }
+    retornarid(ruc: number, num_documento:number): Observable<any[]> {
+        return this.http.get<any[]>(`${this.url}/persona/retornarid/${ruc}/${num_documento}`)
+    }
+    updurl(id: number, upd: any) {
+        return this.http.put(`${this.url}/persona/updurl/${id}`, upd)
+    }
 }

@@ -33,6 +33,7 @@ export class postpersona {
     correo?: string;
     direccion_notificacion?: string;
     telefono?: number;
+    url?: string;
 }
 
 export class persona {

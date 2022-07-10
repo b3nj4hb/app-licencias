@@ -32,11 +32,18 @@ export class RegistroComponent implements OnInit {
     this.listarTipoDocumento();
     // this.listarProvincia();
   }
+  guardarPersona() {
+    sessionStorage.setItem("persona", JSON.stringify(this.personaCrear));
+    sessionStorage.nombre = this.personaCrear.nombre
+    sessionStorage.ruc = this.personaCrear.ruc
+    sessionStorage.numdoc = this.personaCrear.num_documento
+  }
   crearPersona() {
     // this.personaCrear.idtipo_persona.idtipo_persona = Number(this.tipoPersonaCrear.idtipo_persona)
     // this.personaCrear.idtipo_documento.idtipo_documento = Number(this.tipoDocumentoCrear.idtipo_documento)
     this.perServ.save(this.personaCrear).subscribe(data => { console.log(data) })
     // console.log(this.personaCrear)
+    this.guardarPersona()
   }
   listarTipoPersona() {
     this.tipoPerServ.list().subscribe(data => {
