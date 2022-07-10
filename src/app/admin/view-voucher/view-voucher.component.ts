@@ -1,12 +1,14 @@
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { Storage, ref,listAll, getDownloadURL, uploadBytes } from '@angular/fire/storage';
+import { persona } from 'src/app/classes/classes';
+import { personaService } from 'src/app/services/persona.service';
 @Component({
   selector: 'app-view-voucher',
   templateUrl: './view-voucher.component.html',
   styleUrls: ['./view-voucher.component.css']
 })
 export class ViewVoucherComponent implements OnInit {
-
+  persona: persona[] = [];
   images: string [];
   @ViewChildren("Pdf")
   pdfs!: QueryList<any>;
@@ -14,12 +16,13 @@ export class ViewVoucherComponent implements OnInit {
   @ViewChild("mostrador", {
     read: ElementRef
   }) mostrador?: ElementRef;
-  constructor(private renderer: Renderer2 ,private storage: Storage ){
+  constructor(private renderer: Renderer2 ,private storage: Storage, private perService: personaService){
     this.images=[];
   }
 
   ngOnInit() {
     this.getImages();
+    this.listarPersona();
   }
   mostrarPDF(num:number){
     let pdffile = this.pdfs.get(num).nativeElement.files;
@@ -58,5 +61,10 @@ export class ViewVoucherComponent implements OnInit {
     .then()
     .catch(error => console.log(error));
   }
-  
+  listarPersona() {
+    this.perService.list().subscribe(data => {
+      this.persona = data;
+      console.log(this.persona)
+    })
+  }
 }

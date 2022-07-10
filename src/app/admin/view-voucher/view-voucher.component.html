@@ -23,10 +23,10 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
+                                    <tr *ngFor="let p of persona">
                                       <!-- hola -->
-                                      <th scope="row">1</th>
-                                      <td>Mark Spector</td>
+                                      <th scope="row">{{p.idpersona}}</th>
+                                      <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}}</td>
                                       <td>Pediente</td>
                                       <td >Anexo1<span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
                                         visibility
