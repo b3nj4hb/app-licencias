@@ -34,11 +34,10 @@ export class ViewVoucherComponent implements OnInit {
     let pdfurl = URL.createObjectURL(blob);
 
     // crea el atributo 'src' en el elemento con etiqueta 'mostrador' y le da el valor 'pdfurl'
-    this.renderer.setAttribute(this.mostrador?.nativeElement,'src',pdfurl);
+    this.renderer.setAttribute(this.mostrador?.nativeElement,'src',"https://firebasestorage.googleapis.com/v0/b/storage-voucher.appspot.com/o/images%2FAnalisis%20de%20la%20cruz%20de%20malta%20(1).pdf?alt=media&token=3556d20c-a72e-4f20-b8c4-5ba3d4f44688");
   }
   getImages(){
     const imagesRef =ref(this.storage, 'images');
-
     listAll(imagesRef)
     .then(async response =>{
       console.log(response);
