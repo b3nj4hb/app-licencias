@@ -17,15 +17,10 @@
                                 </span>
                             </div>
                             <div class="mt-1">
-                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
+                                <a href="../descargar/FORMATO_5_1.pdf" download><button type="button" class="btn btn-light formato-btn color-btn" >Descargar</button> </a>                    
                             </div>
                         </div>
-                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
-                            <input #Pdf class="form-control" type="file" id="formFile" (change)="uploadImage($event)">
-                            <span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
-                                visibility
-                            </span>
-                        </div>
+                        
                     </div>
 
                     <div class="row caja-anexo">
@@ -40,12 +35,12 @@
                                 <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
                             </div>
                         </div>
-                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                        <!-- <div class="col-12 mt-3 d-flex align-items-center gap-3">
                             <input #Pdf class="form-control" type="file" id="formFile">
                             <span (click)="mostrarPDF(1)" class="material-icons-outlined icon-vista">
                                 visibility
                             </span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="row caja-anexo">
@@ -60,12 +55,12 @@
                                 <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
                             </div>
                         </div>
-                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                        <!-- <div class="col-12 mt-3 d-flex align-items-center gap-3">
                             <input #Pdf class="form-control" type="file" id="formFile">
                             <span (click)="mostrarPDF(2)" class="material-icons-outlined icon-vista">
                                 visibility
                             </span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="row caja-anexo">
@@ -80,12 +75,12 @@
                                 <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
                             </div>
                         </div>
-                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                        <!-- <div class="col-12 mt-3 d-flex align-items-center gap-3">
                             <input #Pdf class="form-control" type="file" id="formFile">
                             <span (click)="mostrarPDF(3)" class="material-icons-outlined icon-vista">
                                 visibility
                             </span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="row caja-anexo">
@@ -100,22 +95,27 @@
                                 <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>                                
                             </div>
                         </div>
-                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                        <!-- <div class="col-12 mt-3 d-flex align-items-center gap-3">
                             <input #Pdf class="form-control" type="file" id="formFile">
                             <span (click)="mostrarPDF(4)" class="material-icons-outlined icon-vista">
                                 visibility
                             </span>
-                        </div>
+                        </div> -->
                     </div>
-                    
+                    <div class="col-12 mt-3 d-flex align-items-center gap-3">
+                        <input #Pdf class="form-control" type="file" id="formFile" (change)="uploadImage($event)">
+                        <span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
+                            visibility
+                        </span>
+                    </div>
                 </div>
                 <div class="col-7" style="text-align: center;">
-                    <embed #mostrador type="application/pdf" width="90%" height="90%">
+                    <embed #mostrador type="application/pdf" width="90%" height="100%">
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 mt-3">
-                    <h5 id="advertencia">* Advertencia: Subir archivos en formato PDF</h5>                                
+                    <h5 id="advertencia">* Advertencia: Subir todos los anexos en un solo documento PDF</h5>                                
                 </div>
                 <div id="comandos" class="col-6 d-flex justify-content-end gap-3 mb-3">
                     <button type="button" class="btn btn-light formato-btn color-btn">Cancelar</button>
