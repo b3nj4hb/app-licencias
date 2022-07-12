@@ -1,39 +1,23 @@
-<app-header></app-header>
-
-<main class="form-signin container">
-  <div>
-    <form>
-
-
-      <div style="width: 23%; margin-left: 39%; margin-top: 150px; border: solid grey 1px;">
-        <div style="margin-bottom: 55px;">
-          <div style="background-color: #0167A7;color:white;text-align: center;">
-            <h1>LOGIN</h1>
-          </div>
-          <div style="background-color: #FFD966; height:5px;margin-top: -10px; display: flex; "></div>
+<!-- <app-header></app-header> -->
+<div class="contenido">
+  <div class="card position-absolute top-50 start-50 translate-middle text-center">
+    <div class="titulo">
+      <div>LOGIN</div>
+    </div>
+    <div class="imagen">
+      <img type="button" src="https://cdn.discordapp.com/attachments/924745361464127533/995822019130167306/Escudo_SJL.png" alt="" [routerLink]="['/']">
+    </div>
+    <div class="card-body">
+      <div class="input-group mb-3">
+        <div id="fondo-boton" class="input-group-text text-light"><span class="material-icons">account_circle</span>
         </div>
-        <div class="form-floating" style="margin: 10px;">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Usuario</label>
-        </div>
-        <div class="form-floating" style="margin: 10px;">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Contraseña</label>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Recordar mi contraseña
-          </label>
-        </div>
-        <div style="a">
-          <button class="w-100 btn btn-lg btn-primary" type="submit">INGRESAR</button>
-        </div>
+        <input type="text" class="form-control" placeholder="Username" name="username" autofocus>
       </div>
-
-
-
-
-    </form>
+      <div class="input-group mb-3">
+        <div id="fondo-boton" class="input-group-text text-light"><span class="material-icons">password</span></div>
+        <input type="password" class="form-control" placeholder="password" name="password">
+      </div>
+      <a id="fondo-boton" value="Login" role="button" class="btn btn-primary">LOGIN</a>
+    </div>
   </div>
-
-</main>
+</div>

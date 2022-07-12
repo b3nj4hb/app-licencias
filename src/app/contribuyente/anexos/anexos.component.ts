@@ -32,7 +32,6 @@ export class AnexosComponent implements OnInit {
     this.retornarid();
     this.updurl()
   }
-
   updurl() {
     var idpersona = sessionStorage.idpersona
     this.updpersona.url = "urlfrontend2.com"

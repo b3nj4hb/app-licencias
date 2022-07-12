@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { persona, postpersona, tipo_documento, tipo_persona } from 'src/app/classes/classes';
 import { personaService } from 'src/app/services/persona.service';
-import { provinciaService } from 'src/app/services/provincia.service';
 import { tipoDocumentoService } from 'src/app/services/tipoDocumento.service';
 import { tipoPersonaService } from 'src/app/services/tipoPersona.service';
 import Swal from 'sweetalert2';
@@ -24,7 +23,6 @@ export class RegistroComponent implements OnInit {
   constructor(private perServ: personaService,
     private tipoPerServ: tipoPersonaService,
     private tipoDocServ: tipoDocumentoService,
-    private provServ: provinciaService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -57,12 +55,6 @@ export class RegistroComponent implements OnInit {
       // console.log(this.tipoDocumento)
     })
   }
-  listarProvincia() {
-    this.provServ.list().subscribe(data => {
-      this.provincia = data;
-      // console.log(this.provincia)
-    })
-  }
   obtenerIdTipoPersona(id: any) {
     // console.log(id.target.value)
     this.personaCrear.idtipo_persona = Number(id.target.value)
@@ -74,14 +66,12 @@ export class RegistroComponent implements OnInit {
   confirmar() {
     Swal.fire({
       title: 'VERIFIQUE LOS DATOS',
-      // text: "Identidicación del solicitante",
+      // text: ("Identidicación del solicitante: \n"+
+      // 'Nombre: '+this.personaCrear.nombre+'\n'+
+      // 'Apellidos: '+this.personaCrear.ape_pat+' '+this.personaCrear.ape_mat+'\n'+
+      // 'N° RUC: '+this.personaCrear.ruc+'\n'+
+      // ''),
 
-      /*html: `<h2>Identificación del solicitante</h2>
-      <ul>
-      <li><p><strong>Tipo de contribuyente: </strong>{{personaCrear.tipoPersona}</p></li>
-      <li><p><strong>Tipo de contribuyente: </strong>{{personaCrear.nombre}}</p></li>
-      </ul>
-      `,*/
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

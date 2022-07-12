@@ -1,51 +1,51 @@
 <app-header></app-header>
 <div class="todo">
     <div id="cuerpo">
+        <div class="titulo">
+            <div>REGISTRO</div>
+        </div>
         <form id="sec">
-            <div class="mb-2">
+            <div class="mb-2 casilla">
                 <label class="form-label">TIPO DE CONTRIBUYENTE</label>
-                <div class="dropdown">
-                    <select (change)="obtenerIdTipoPersona($event)" [(ngModel)]="tipoPersonaCrear.idtipo_persona"
-                        name="idtipopersona" class="form-select" aria-label="Default select example">
-                        <option selected>Tipo de contribuyente</option>
-                        <option [value]="tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
-                    </select>
-                </div>
-
+                <select (change)="obtenerIdTipoPersona($event)" [(ngModel)]="tipoPersonaCrear.idtipo_persona"
+                    name="idtipopersona" class="form-select" aria-label="Default select example">
+                    <option selected>Tipo de contribuyente</option>
+                    <option [value]="tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
+                </select>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">NOMBRE</label>
-                <div class="input-group mb-2" type="button">
+            <div class="mb-2 casilla">
+                <label class="form-label">NOMBRE</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.nombre" name="nombre" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">APELLIDO PATERNO</label>
-                <div class="input-group mb-2" type="button">
+            <div class="mb-2 casilla">
+                <label class="form-label">APELLIDO PATERNO</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.ape_pat" name="nombre" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">APELLIDO MATERNO</label>
-                <div class="input-group mb-2" type="button">
+            <div class="mb-2 casilla">
+                <label class="form-label">APELLIDO MATERNO</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.ape_mat" name="nombre" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
-        </form>
+            <!-- </form> -->
 
-        <form id="sec">
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">N° RUC</label>
-                <div class="input-group mb-2" type="button">
+            <!-- <form id="sec"> -->
+            <div class="mb-2 casilla">
+                <label class="form-label">N° RUC</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.ruc" name="ruc" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">TIPO DOCUMENTO</label>
+            <div class="mb-2 casilla">
+                <label class="form-label">TIPO DOCUMENTO</label>
                 <select (change)="obtenerIdTipoDocumento($event)" [(ngModel)]="tipoDocumentoCrear.idtipo_documento"
                     name="idtipodocumento" class="form-select" aria-label="Default select example">
                     <option selected>Tipo de documento</option>
@@ -53,43 +53,70 @@
                     </option>
                 </select>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">N° DE DOCUMENTO</label>
-                <div class="input-group mb-2" type="button">
+            <div class="mb-2 casilla">
+                <label class="form-label">N° DE DOCUMENTO</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.num_documento" name="numdocumento" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
-        </form>
-        <form id="sec">
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">DIRECCIÓN DE NOTIFICACIÓN</label>
-                <div class="input-group mb-2" type="button">
+            <!-- </form> -->
+            <!-- <form id="sec"> -->
+            <div class="mb-2 casilla">
+                <label class="form-label">DIRECCIÓN DE NOTIFICACIÓN</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.direccion_notificacion" name="direccion_notificacion" type="text"
                         class="form-control" aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">CORREO ELECTRÓNICO</label>
-                <div class="input-group mb-2" type="button">
+            <div class="mb-2 casilla">
+                <label class="form-label">CORREO ELECTRÓNICO</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.correo" name="correo" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
-            <div class="mb-2">
-                <label for="exampleInputPassword1" class="form-label">TELÉFONO</label>
-                <div class="input-group mb-2" type="button">
+            <div class="mb-2 casilla">
+                <label class="form-label">TELÉFONO</label>
+                <div class="casilla" type="button">
                     <input [(ngModel)]="personaCrear.telefono" name="telefono" type=" text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
         </form>
+
+        <form id="sec">
+            <div class="mb-2 casilla">
+                <label class="form-label">DIRECCION</label>
+                <div class="casilla" type="button">
+                    <input [(ngModel)]="personaCrear.nombre" name="nombre" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">REFERENCIA</label>
+                <div class="casilla" type="button">
+                    <input [(ngModel)]="personaCrear.nombre" name="nombre" type="text" class="form-control"
+                        aria-label="Text input with checkbox">
+                </div>
+            </div>
+            <div class="mb-2 casilla">
+                <label class="form-label">DISTRITO</label>
+                <select (change)="obtenerIdTipoDocumento($event)" [(ngModel)]="tipoDocumentoCrear.idtipo_documento"
+                    name="idtipodocumento" class="form-select" aria-label="Default select example">
+                    <option selected>Tipo de documento</option>
+                    <option [value]="td.idtipo_documento" *ngFor="let td of tipoDocumento">{{td.tipo_documento}}
+                    </option>
+                </select>
+            </div>
+        </form>
+
         <div class="botones">
             <div class="left">
-                <div type="button" class="btn btn-primary" [routerLink]="['/']">Regresar</div>
+                <div id="fondo-boton" type="button" class="btn btn-primary" [routerLink]="['/']">Regresar</div>
             </div>
             <div class="right">
-                <div (click)="confirmar()" type="button" class="btn btn-success" >Confirmar</div>
+                <div (click)="confirmar()" type="button" class="btn btn-success">Confirmar</div>
             </div>
         </div>
     </div>
