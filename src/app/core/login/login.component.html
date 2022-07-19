@@ -5,19 +5,23 @@
       <div>LOGIN</div>
     </div>
     <div class="imagen">
-      <img type="button" src="https://cdn.discordapp.com/attachments/924745361464127533/995822019130167306/Escudo_SJL.png" alt="" [routerLink]="['/']">
+      <img type="button"
+        src="https://cdn.discordapp.com/attachments/924745361464127533/995822019130167306/Escudo_SJL.png" alt=""
+        [routerLink]="['/']">
     </div>
     <div class="card-body">
       <div class="input-group mb-3">
         <div id="fondo-boton" class="input-group-text text-light"><span class="material-icons">account_circle</span>
         </div>
-        <input type="text" class="form-control" placeholder="Username" name="username" autofocus>
+        <input type="text" class="form-control" placeholder="Username" autofocus
+        [(ngModel)] = "vUser.user" name="user">
       </div>
       <div class="input-group mb-3">
         <div id="fondo-boton" class="input-group-text text-light"><span class="material-icons">password</span></div>
-        <input type="password" class="form-control" placeholder="password" name="password">
+        <input type="password" class="form-control" placeholder="password"
+        [(ngModel)] = "vUser.password" name="password">
       </div>
-      <a id="fondo-boton" value="Login" role="button" class="btn btn-primary">LOGIN</a>
+      <a (click)="[login()]" id="fondo-boton" value="Login" role="button" class="btn btn-primary">LOGIN</a>
     </div>
   </div>
 </div>

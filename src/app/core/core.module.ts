@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { PantallaPresentacionComponent } from './pantalla-presentacion/pantalla-presentacion.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent }
@@ -18,7 +19,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule,
     RouterModule.forRoot(routes),
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
   ]
 })
 export class CoreModule { }

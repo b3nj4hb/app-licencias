@@ -80,8 +80,17 @@ export class usuario {
     idusuario?: number;
     user?: string;
     password?: string;
-    idrol?: rol;
-    idpersona?: persona;
+    idrol?: number;
+    idpersona?: number;
+}
+
+export class validarUsuario {
+    idpersona?: number;
+    idusuario?: number;
+    user?: string;
+    rol?: string;
+    password?: any;
+    nombres?: string;
 }
 
 export class voucher_pago {
