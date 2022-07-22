@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       // Alerta
       swal.fire('Login', `Hola ${this.localusuario.nombres}, has iniciado sesión con exito!`)
       this.localusuario.rol == 'Administrador' ? this.router.navigate(['/admin/view-voucher'])
-        : this.router.navigate(['/contribuyente/registro'])
+        : this.router.navigate(['/contribuyente/anexos'])
     }, error => {
       if (error) {
         swal.fire('Error Login', 'Usuario o clave Incorrecta', 'error');

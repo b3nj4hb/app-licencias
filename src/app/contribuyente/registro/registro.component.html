@@ -9,7 +9,7 @@
                 <label class="form-label">TIPO DE CONTRIBUYENTE</label>
                 <select (change)="obtenerIdTipoPersona($event)" [(ngModel)]="tipoPersonaCrear.idtipo_persona"
                     name="idtipopersona" class="form-select" aria-label="Default select example">
-                    <option selected>Tipo de contribuyente</option>
+                    <option>Tipo de contribuyente</option>
                     <option [value]="tp.idtipo_persona" *ngFor="let tp of tipoPersona">{{tp.tipo_persona}}</option>
                 </select>
             </div>
@@ -48,7 +48,7 @@
                 <label class="form-label">TIPO DOCUMENTO</label>
                 <select (change)="obtenerIdTipoDocumento($event)" [(ngModel)]="tipoDocumentoCrear.idtipo_documento"
                     name="idtipodocumento" class="form-select" aria-label="Default select example">
-                    <option selected>Tipo de documento</option>
+                    <option>Tipo de documento</option>
                     <option [value]="td.idtipo_documento" *ngFor="let td of tipoDocumento">{{td.tipo_documento}}
                     </option>
                 </select>
@@ -85,27 +85,28 @@
             </div>
         </form>
 
+        <!-- localidad -->
         <form id="sec">
             <div class="mb-2 casilla">
                 <label class="form-label">DIRECCION</label>
                 <div class="casilla" type="button">
-                    <input [(ngModel)]="personaCrear.nombre" name="nombre" type="text" class="form-control"
+                    <input [(ngModel)]="localidadCrear.direccion" name="direccion" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
             <div class="mb-2 casilla">
                 <label class="form-label">REFERENCIA</label>
                 <div class="casilla" type="button">
-                    <input [(ngModel)]="personaCrear.nombre" name="nombre" type="text" class="form-control"
+                    <input [(ngModel)]="localidadCrear.referencia" name="referencia" type="text" class="form-control"
                         aria-label="Text input with checkbox">
                 </div>
             </div>
             <div class="mb-2 casilla">
                 <label class="form-label">DISTRITO</label>
-                <select (change)="obtenerIdTipoDocumento($event)" [(ngModel)]="tipoDocumentoCrear.idtipo_documento"
-                    name="idtipodocumento" class="form-select" aria-label="Default select example">
-                    <option selected>Tipo de documento</option>
-                    <option [value]="td.idtipo_documento" *ngFor="let td of tipoDocumento">{{td.tipo_documento}}
+                <select (change)="obtenerIdDistrito($event)" [(ngModel)]="localidadCrear.iddistrito" name="iddistrito"
+                    class="form-select" aria-label="Default select example">
+                    <option>Distrito</option>
+                    <option [value]="d.iddistrito" *ngFor="let d of distrito">{{d.nombre}}
                     </option>
                 </select>
             </div>

@@ -13,7 +13,7 @@ export class localidad {
     idlocalidad?: number;
     referencia?: string;
     direccion?: string;
-    iddistrito?: distrito;
+    iddistrito?: number;
 }
 
 export class persona_localidad {

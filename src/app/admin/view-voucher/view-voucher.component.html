@@ -1,69 +1,139 @@
 <app-header></app-header>
 <div class="container" style="margin-top: 80px;">
-    <div class="row">
-        <div id="titulo" class="col-12">
-            <h4>DESCARGAR ANEXOS</h4>
-        </div>
-    
-        <div class="col-12 mt-4">
-            <div class="row">
-                <div class="col-5 d-flex flex-column gap-3">
-                    <div class="row caja-anexo">
-                        <div class="col-12 caja-titulo-desc">
-                            <div class="d-flex gap-2 mt-2">
-                                
-                                <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">N°</th>
-                                      <th scope="col">Contribuyente</th>
-                                      <th scope="col">Estado</th>
-                                      <th scope="col" #Pdf>AnexosSubidos</th>
-                                      <th scope="col">DeclaracionJurada</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr *ngFor="let p of persona">
-                                      <!-- hola -->
-                                      <th scope="row">{{p.idpersona}}</th>
-                                      <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}}</td>
-                                      <td>Pediente</td>
-                                      <td >Anexo1<span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
-                                        visibility
-                                    </span></td>
-                                    <td >Declaracion<span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
-                                      visibility
-                                  </span></td>
-                                    </tr>
-                                    
-                                  </tbody>
-                                </table>
-                            </div>
-                           
+    <div class="titulo">
+        <div>VER ANEXOS</div>
+    </div>
+
+    <div class="list-h">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">RUC</th>
+                    <th scope="col">Contribuyente</th>
+                    <th scope="col" #Pdf>AnexosSubidos</th>
+                    <th scope="col" #Pdf>Voucher</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Comentario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of persona">
+                    <!-- hola -->
+                    <th scope="row">{{p.ruc}}</th>
+                    <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}}</td>
+                    <!-- <td>Pediente</td> -->
+                    <td>
+                        <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
+                            class="centrar-h">
+                            <span class="material-icons-outlined icono">visibility</span>
+                            Anexo1
                         </div>
-                        <div class="col-12 mt-3 d-flex align-items-center gap-3">
-                            <!-- <input #Pdf class="form-control" type="file" id="formFile">
-                            <span (click)="mostrarPDF(0)" class="material-icons-outlined icon-vista">
-                                visibility
-                            </span> -->
+                    </td>
+                    <td>
+                        <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
+                            class="centrar-h">
+                            <span class="material-icons-outlined icono">visibility</span>
+                            Voucher
                         </div>
-                    </div>
-                   
-                </div>
-                <div class="col-7" style="text-align: center;">
-                    <embed #mostrador type="application/pdf" width="90%" height="90%">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 mt-3">
-                    <h5 id="advertencia">* Advertencia: Subir archivos en formato PDF</h5>                                
-                </div>
-                <div id="comandos" class="col-6 d-flex justify-content-end gap-3 mb-3">
-                    <button type="button" class="btn btn-light formato-btn color-btn">Cancelar</button>
-                    <div type="button" class="btn btn-primary" [routerLink]="['/contribuyente/registro']">Regresar</div>
-                    <button type="button" class="btn btn-success formato-btn" >Siguiente</button>                                
+                    </td>
+                    <td>
+                        <div type="button" data-bs-toggle="modal" data-bs-target="#cambiarestado" class="centrar-h">
+                            <span class="material-icons-outlined icono">edit</span>
+                            Cambiar Estado
+                        </div>
+                    </td>
+                    <td>
+                        <div type="button" data-bs-toggle="modal" data-bs-target="#addcomentario" class="centrar-h">
+                            <span class="material-icons-outlined icono">add_comment</span>
+                            Comentario
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="verdocumento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- body -->
+                <div class="modal-body">
+                    <embed #mostrador type="application/pdf" class="documento">
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cambiarestado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cambiar Estado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                    <div class="list-v">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Aprobado</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Pendiente</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                value="option3" disabled>
+                            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addcomentario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cambiar Estado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- botones -->
+    <!-- <div class="row">
+        <div class="col-6 mt-3">
+            <h5 id="advertencia">* Advertencia: Subir archivos en formato PDF</h5>
+        </div>
+        <div id="comandos" class="col-6 d-flex justify-content-end gap-3 mb-3">
+            <button type="button" class="btn btn-light formato-btn color-btn">Cancelar</button>
+            <div type="button" class="btn btn-primary" [routerLink]="['/contribuyente/registro']">Regresar</div>
+            <button type="button" class="btn btn-success formato-btn">Siguiente</button>
+        </div>
+    </div> -->
 </div>
