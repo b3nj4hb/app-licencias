@@ -1,6 +1,14 @@
 <div class="header ">
-    <img (click)="cerrarSesion()" type="button" [routerLink]="['/']" src="https://munichosica.gob.pe/wp-content/uploads/2020/07/logo-h-1v2-1.jpg"
+    <img src="https://munichosica.gob.pe/wp-content/uploads/2020/07/logo-h-1v2-1.jpg"
         alt="">
     <!-- <div style="background-color: #EEB911; height:5px;margin-top: 0; display: flex; "></div> -->
     <!-- <div type="button">a</div> -->
+    <div class="d-flex align-items-center" *ngIf="user != null">
+        <button (click)="cerrarSesion()" [routerLink]="['/']" id="cerrar-sesion" type="button" class="btn btn-danger d-flex align-items-center"> 
+            <span class="material-icons-outlined icon">
+                logout
+            </span>
+            Cerrar Sesion
+        </button>
+    </div>
 </div>

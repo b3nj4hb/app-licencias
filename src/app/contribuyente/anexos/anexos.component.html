@@ -17,8 +17,8 @@
                                 </span>
                             </div>
                             <div class="mt-1">
-                                <a href="../descargar/FORMATO_5_1.pdf" download><button type="button"
-                                        class="btn btn-light formato-btn color-btn">Descargar</button> </a>
+                                <button type="button"
+                                        class="btn btn-light formato-btn color-btn">Descargar</button>
                             </div>
                         </div>
 
@@ -73,7 +73,9 @@
                                 </span>
                             </div>
                             <div class="mt-1">
-                                <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>
+                                <a href="https://drive.google.com/u/0/uc?id=1jpYyaUobqAFepNTtOZjnvCqmLlDaUz_c&export=download" download>
+                                    <button type="button" class="btn btn-light formato-btn color-btn">Descargar</button>
+                                </a>                                
                             </div>
                         </div>
                         <!-- <div class="col-12 mt-3 d-flex align-items-center gap-3">
@@ -119,9 +121,7 @@
                     <h5 id="advertencia">* Advertencia: Subir todos los anexos en un solo documento PDF</h5>
                 </div>
                 <div id="comandos" class="col-6 d-flex justify-content-end gap-3 mb-3">
-                    <button type="button" class="btn btn-light formato-btn color-btn">Cancelar</button>
-                    <div type="button" class="btn btn-primary" [routerLink]="['/contribuyente/registro']">Regresar</div>
-                    <button type="button" class="btn btn-success formato-btn">Siguiente</button>
+                    <button type="button" class="btn btn-success formato-btn" [routerLink]="['/contribuyente/pagos']">Siguiente</button>
                 </div>
             </div>
         </div>

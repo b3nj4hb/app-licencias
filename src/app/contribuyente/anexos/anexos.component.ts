@@ -75,45 +75,46 @@ export class AnexosComponent implements OnInit {
       .then()
       .catch(error => console.log(error));
   }
+
   mostrarInfo(num: number) {
     switch (num) {
       case 1:
         Swal.fire({
-          title: 'Anexo 1 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          title: 'Anexo 1 <br> <h5 style="margin-top:13px;">Solictud de inspección técnica de seguridad en edificaciones y evaluación de condiciones de seguridad en espectáculos públicos depórtivos y no deportivos - ECSE</h5>',
           icon: 'info',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+          text: ''
         })
         break;
 
       case 2:
         Swal.fire({
-          title: 'Anexo 2 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          title: 'Anexo 2 <br> <h5 style="margin-top:13px;">Información proporcionada por el solicitante para la determinación del nivel de riesgo del establecimiento objeto de inspección</h5>',
           icon: 'info',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+          text: ''
         })
         break;
 
       case 3:
         Swal.fire({
-          title: 'Anexo 3 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          title: 'Anexo 3 <br> <h5 style="margin-top:13px;">Reporte de nivel de riesgo del establecimiento objeto de inspección</h5>',
           icon: 'info',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+          text: ''
         })
         break;
 
       case 4:
         Swal.fire({
-          title: 'Anexo 4 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          title: 'Anexo 4 <br> <h5 style="margin-top:13px;">Declaración jurada de cumplimiento de las condiciones de seguridad en la edificación</h5>',
           icon: 'info',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+          text: ''
         })
         break;
 
       case 5:
         Swal.fire({
-          title: 'Anexo 5 <br> <h5 style="margin-top:13px;">Nombre del anexo</h5>',
+          title: 'Anexo 5 <br> <h5 style="margin-top:13px;">Declaración jurada para renovación del certificado de inspección técnica de seguridad en edificaciones</h5>',
           icon: 'info',
-          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu leo ipsum. Nulla diam purus, interdum eget pretium vitae, dignissim non nisl. Nam nec commodo magna, eu sodales nibh.'
+          text: ''
         })
         break;
 

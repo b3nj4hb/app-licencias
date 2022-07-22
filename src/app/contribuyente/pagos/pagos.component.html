@@ -8,50 +8,63 @@
         <div class="contenido ">
             <div class="voucher">
                 <div class="subtitulo">
-                    <div>SUBIR VOUCHER DE PAGO DE INSPECCION</div>
+                    <div>SUBIR VOUCHERS DE PAGO DE INSPECCION Y LICENCIAMIENTO</div>
                 </div>
                 <div class="tarjeta">
                     <div class="formulario">
                         <div class="form-group">
                             <label for="name" class="col-form-label">FECHA:</label>
-                            <input type="date" class="form-control" name="EMP_FACEBOOK" id="EMP_FACEBOOK">
+                            <input [(ngModel)]="voucher.fecha" type="date" class="form-control" name="fecha" id="EMP_FACEBOOK">
                         </div>
                         <div class="form-group">
                             <label for="name" class="col-form-label">TIPO DE RIESGO:</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" [(ngModel)]="voucher.idtipo_riesgo" name="idtipo_riesgo">
                                 <option selected>Seleccionar tipo de riesgo</option>
-                                <option>Seleccionar Sesion</option>
+                                <option [value]="t.idtipo_riesgo" *ngFor="let t of tipo_riesgo">{{t.tipo_riesgo}}</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="description" class="col-form-label">VOUCHER DE PAGO:</label>
-                            <input type="file" class="form-control" name="CURS_IMAGEN" id="CURS_IMAGEN">
-                        </div>
-                        <div class="caja-button">
-                            <button type="submit" class="btn btn-primary color-button">SUBIR</button>
+                            <input type="file" id="formFile" (change)="uploadImage($event)" class="form-control" name="CURS_IMAGEN" id="CURS_IMAGEN">
                         </div>
                     </div>
 
                 </div>
             </div>
+            
+            <!---
+            
             <div class="voucher">
                 <div class="subtitulo">
-                    <div>SUBIR VOUCHER DE PAGO DE INSPECCION</div>
+                    <div>SUBIR VOUCHER DE PAGO DE LICENCIAMIENTO</div>
                 </div>
                 <div class="tarjeta">
                     <div class="form-group">
                         <label for="name" class="col-form-label">FECHA:</label>
-                        <input type="date" class="form-control" name="EMP_FACEBOOK" id="EMP_FACEBOOK">
+                        <input [(ngModel)]="voucher2.fecha" type="date" class="form-control" name="fecha" id="EMP_FACEBOOK">
                     </div>
                     <div class="form-group">
                         <label for="description" class="col-form-label">VOUCHER DE PAGO:</label>
-                        <input type="file" class="form-control" name="CURS_IMAGEN" id="CURS_IMAGEN">
-                    </div>
-                    <div class="caja-button">
-                        <button type="submit" class="btn btn-primary color-button">SUBIR</button>
+                        <input type="file" id="formFile" (change)="uploadImage($event)" class="form-control" name="CURS_IMAGEN" id="CURS_IMAGEN">
                     </div>
                 </div>
             </div>
+            
+            -->
+            
+
         </div>
+
+        
     </form>
+
+    <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div id="comandos" class="col-6 d-flex justify-content-end gap-3 mb-3">
+            <div type="button" class="btn btn-primary" [routerLink]="['/contribuyente/anexos']">Regresar</div>
+            <button type="button" class="btn btn-success formato-btn" (click)="finalizar();">Finalizar</button>
+        </div>
+    </div>
 </div>

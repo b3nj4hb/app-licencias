@@ -116,7 +116,7 @@ export class RegistroComponent implements OnInit {
           'success'
         )
         this.crearPersona()
-        this.router.navigate(['/contribuyente/anexos'])
+        this.router.navigate(['/'])
       }
     })
   }
