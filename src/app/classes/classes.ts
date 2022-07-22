@@ -1,6 +1,6 @@
 export class departamento {
     iddepartamento?: number;
-    nombre?:string;
+    nombre?: string;
 }
 
 export class distrito {
@@ -17,8 +17,8 @@ export class localidad {
 }
 
 export class persona_localidad {
-    idpersona?: persona;
-    idlocalidad?: localidad;
+    idpersona?: number;
+    idlocalidad?: number;
 }
 
 export class postpersona {
@@ -98,4 +98,25 @@ export class voucher_pago {
     fecha?: string;
     idtipo_riesgo?: tipo_riesgo;
     idpersona?: persona;
+}
+
+// consultas
+// datos de contribuyente
+export class contribuyente {
+    ruc?: string;
+    url?: string;
+    correo?: string;
+    telefono?: string;
+    tipo_documento?: string;
+    num_documento?: string;
+    tipo_persona?: string;
+    direccion_notificacion?: string;
+    nombres?: string;
+}
+// localidad de persona
+export class plocalidad {
+    referencia?: any;
+    direccion?: any;
+    // distrito
+    distrito?: number;
 }

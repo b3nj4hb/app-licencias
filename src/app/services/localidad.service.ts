@@ -20,5 +20,8 @@ export class LocalidadService {
   savePersonaLocalidad(post: persona_localidad): Observable<any> {
     return this.http.post<any>(this.url + '/persona_localidad/add', post)
   }
+  retornaridlocalidad(referencia: any, direccion: any): Observable<any[]> {
+    return this.http.get<any[]>(`${this.url}/localidad/retornarid/${referencia}/${direccion}`)
+  }
 
 }

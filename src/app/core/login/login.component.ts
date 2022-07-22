@@ -50,9 +50,11 @@ export class LoginComponent implements OnInit {
   saveToken() {
     // Desencriptar token y almacenar objeto
     let user = this.parseJwt(localStorage.token)
+    
     // Guardar en localstorage como json
     localStorage.user = JSON.stringify(user['user'])
     console.log(user['user'])
+
     // convertir a json el objeto del localstorage
     let usuariolocal = JSON.parse(localStorage.user)
     console.log(usuariolocal['idper'])

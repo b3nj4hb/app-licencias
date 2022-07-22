@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
-import { postpersona } from 'src/app/classes/classes';
+import { persona_localidad, postpersona } from 'src/app/classes/classes';
 import { personaService } from 'src/app/services/persona.service';
 import Swal from 'sweetalert2';
 
@@ -14,6 +14,7 @@ export class AnexosComponent implements OnInit {
   persona: any[] = [];
   updpersona = new postpersona;
   images: string[];
+  personalocalidadCrear = new persona_localidad
 
   @ViewChildren("Pdf")
   pdfs!: QueryList<any>;
@@ -27,10 +28,12 @@ export class AnexosComponent implements OnInit {
     private perServ: personaService) {
     this.images = [];
   }
-
   ngOnInit(): void {
     this.retornarid();
     this.updurl()
+  }
+  crearPersonaLocalidad() {
+    
   }
   updurl() {
     var idpersona = sessionStorage.idpersona
