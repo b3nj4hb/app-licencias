@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { Storage, ref,listAll, getDownloadURL, uploadBytes } from '@angular/fire/storage';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { persona } from 'src/app/classes/classes';
 import { personaService } from 'src/app/services/persona.service';
 @Component({
@@ -8,6 +10,7 @@ import { personaService } from 'src/app/services/persona.service';
   styleUrls: ['./view-voucher.component.css']
 })
 export class ViewVoucherComponent implements OnInit {
+  tittle = 'envioCorreos';
   persona: persona[] = [];
   images: string [];
   @ViewChildren("Pdf")
@@ -16,8 +19,21 @@ export class ViewVoucherComponent implements OnInit {
   @ViewChild("mostrador", {
     read: ElementRef
   }) mostrador?: ElementRef;
-  constructor(private renderer: Renderer2 ,private storage: Storage, private perService: personaService){
+  constructor(private renderer: Renderer2 ,private storage: Storage, private perService: personaService, private httpclient:HttpClient){
     this.images=[];
+    this.datos = new FormGroup({
+      correo: new FormControl ('', [Validators.required, Validators.email])
+    })
+  }
+
+  enviarCorreo(){
+    let params = {
+      email: this.datos.value.correo
+    }
+    console.log(params)
+    this.httpclient.post('http://localhost:3000/envio',params).subscribe(resp =>{
+      console.log(resp)
+    })
   }
 
   ngOnInit() {
@@ -66,4 +82,7 @@ export class ViewVoucherComponent implements OnInit {
       console.log(this.persona)
     })
   }
+
+  datos:FormGroup;
+  
 }

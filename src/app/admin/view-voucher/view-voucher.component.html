@@ -10,7 +10,8 @@
                 <tr>
                     <th scope="col">RUC</th>
                     <th scope="col">Contribuyente</th>
-                    <th scope="col" #Pdf>AnexosSubidos</th>
+                    <th scope="col">Notificar</th>
+                    <th scope="col" #Pdf>Anexos Subidos</th>
                     <th scope="col" #Pdf>Voucher</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Comentario</th>
@@ -20,13 +21,19 @@
                 <tr *ngFor="let p of persona">
                     <!-- hola -->
                     <th scope="row">{{p.ruc}}</th>
-                    <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}}</td>
+                    <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}} </td>
                     <!-- <td>Pediente</td> -->
+                    <td>
+                        <div type="button" class="button centrar-h" data-bs-toggle="modal" data-bs-target="#correo">
+                            <span class="material-icons-outlined icono">forward_to_inbox</span>
+                            Enviar
+                        </div>
+                    </td>
                     <td>
                         <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
                             class="centrar-h">
                             <span class="material-icons-outlined icono">visibility</span>
-                            Anexo1
+                            Anexos
                         </div>
                     </td>
                     <td>
@@ -109,7 +116,7 @@
             <div class="modal-content">
                 <!-- header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cambiar Estado</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Observaciones del documento</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- body -->
@@ -124,6 +131,62 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal de envio de correos -->
+    
+    <div *ngFor="let p of persona" class="modal fade" id="correo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">   
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Confirmar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Ingrese el correo {{p.correo}} para confirmar
+              <hr>
+              <form [formGroup]="datos">
+                
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Ingresar correo:</label>
+                  <input formControlName="correo" type="email" placeholder="Correo" class="form-control">
+                </div>
+                
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="enviarCorreo()">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="modal fade" id="correo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="datos">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Recipient:</label>
+                  <input formControlName="correo" type="email" placeholder="Correo" class="form-control">
+                </div>
+                
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="enviarCorreo()">Enviar1</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <!-- Modal de envio de correos -->
 
     <!-- botones -->
     <!-- <div class="row">

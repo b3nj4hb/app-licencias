@@ -6,7 +6,8 @@ import { ViewAnexosComponent } from './view-anexos/view-anexos.component';
 import { ViewDecjuComponent } from './view-decju/view-decju.component';
 import { ComponentsModule } from '../components/components.module';
 import { ViewContribuyenteComponent } from './view-contribuyente/view-contribuyente.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     AdminRoutingModule,
     ComponentsModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
