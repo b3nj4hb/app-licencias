@@ -17,10 +17,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of persona">
+                <tr *ngFor="let p of contribuyentes">
                     <!-- hola -->
                     <th scope="row">{{p.ruc}}</th>
-                    <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}}</td>
+                    <td type="button" data-bs-toggle="modal" data-bs-target="#datoscontribuyente" (click)="listarlocalidad(p.idpersona)">
+                        {{p.nombres}}
+                    </td>
                     <!-- <td>Pediente</td> -->
                     <td>
                         <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
@@ -120,6 +122,32 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="datoscontribuyente" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Datos Contribuyente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                    <ul>
+                        <!-- <li>{{localidad.referencia}}</li>
+                        <li>{{localidad.direccion}}</li>
+                        <li>{{localidad.distrito}}</li> -->
+                    </ul>
+                </div>
+                <!-- footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>

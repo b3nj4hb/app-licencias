@@ -37,7 +37,7 @@ export class personaService {
         return this.http.put(`${this.url}/persona/updurl/${id}`, upd)
     }
     listarcontribuyentes(): Observable<persona[]> {
-        return this.http.get<persona[]>(this.url + '/listarcontribuyentes');
+        return this.http.get<any[]>(this.url + '/persona/listarcontribuyentes');
     }
     buscarlocalidad(id: number): Observable<any[]> {
         return this.http.get<any[]>(`${this.url}/persona/buscarlocalidad/${id}`)

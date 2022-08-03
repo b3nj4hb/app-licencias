@@ -118,5 +118,5 @@ export class plocalidad {
     referencia?: any;
     direccion?: any;
     // distrito
-    distrito?: number;
+    distrito?: any;
 }
