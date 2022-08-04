@@ -13,49 +13,47 @@
                     <th scope="col">Notificar</th>
                     <th scope="col" #Pdf>Anexos Subidos</th>
                     <th scope="col" #Pdf>Voucher</th>
-                    <th scope="col">Estado</th>
                     <th scope="col">Comentario</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of persona">
-                    <!-- hola -->
-                    <th scope="row">{{p.ruc}}</th>
-                    <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}} </td>
-                    <!-- <td>Pediente</td> -->
-                    <td>
-                        <div type="button" class="button centrar-h" data-bs-toggle="modal" data-bs-target="#correo">
-                            <span class="material-icons-outlined icono">forward_to_inbox</span>
-                            Enviar
-                        </div>
-                    </td>
-                    <td>
-                        <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
-                            class="centrar-h">
-                            <span class="material-icons-outlined icono">visibility</span>
-                            Anexos
-                        </div>
-                    </td>
-                    <td>
-                        <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
-                            class="centrar-h">
-                            <span class="material-icons-outlined icono">visibility</span>
-                            Voucher
-                        </div>
-                    </td>
-                    <td>
-                        <div type="button" data-bs-toggle="modal" data-bs-target="#cambiarestado" class="centrar-h">
-                            <span class="material-icons-outlined icono">edit</span>
-                            Cambiar Estado
-                        </div>
-                    </td>
-                    <td>
-                        <div type="button" data-bs-toggle="modal" data-bs-target="#addcomentario" class="centrar-h">
-                            <span class="material-icons-outlined icono">add_comment</span>
-                            Comentario
-                        </div>
-                    </td>
-                </tr>
+                    <tr *ngFor="let p of persona">
+                        <ng-container>
+                            <!-- hola -->
+                        <th scope="row">{{p.ruc}}</th>
+                        <td>{{p.nombre}}, {{p.ape_pat}} {{p.ape_mat}} </td>
+                        <!-- <td>Pediente</td> -->
+                        <td>
+                            <div (click)="correo(p.correo)" type="button" class="button centrar-h" data-bs-toggle="modal" data-bs-target="#correo">
+                                <span class="material-icons-outlined icono">forward_to_inbox</span>
+                                Enviar
+                            </div>
+                        </td>
+                        <td>
+                            <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
+                                class="centrar-h">
+                                <span class="material-icons-outlined icono">visibility</span>
+                                Anexos
+                            </div>
+                        </td>
+                        <td>
+                            <div (click)="mostrarPDF(0)" type="button" data-bs-toggle="modal" data-bs-target="#verdocumento"
+                                class="centrar-h">
+                                <span class="material-icons-outlined icono">visibility</span>
+                                Voucher
+                            </div>
+                        </td>
+                        <td>
+                            <div type="button" data-bs-toggle="modal" data-bs-target="#addcomentario" class="centrar-h">
+                                <span class="material-icons-outlined icono">add_comment</span>
+                                Comentario
+                            </div>
+                        </td>
+                        </ng-container>
+                        
+                    </tr>
+                
+                
             </tbody>
         </table>
     </div>
@@ -134,7 +132,7 @@
 
     <!-- Modal de envio de correos -->
     
-    <div *ngFor="let p of persona" class="modal fade" id="correo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="correo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">   
             <div class="modal-header">
@@ -142,7 +140,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Ingrese el correo {{p.correo}} para confirmar
+                Ingrese el correo {{mostrar}} para confirmar
               <hr>
               <form [formGroup]="datos">
                 
@@ -159,7 +157,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
 
       <!-- <div class="modal fade" id="correo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

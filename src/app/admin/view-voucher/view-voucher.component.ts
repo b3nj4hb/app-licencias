@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { Storage, ref,listAll, getDownloadURL, uploadBytes } from '@angular/fire/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { persona } from 'src/app/classes/classes';
+import { persona, usuario } from 'src/app/classes/classes';
 import { personaService } from 'src/app/services/persona.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-view-voucher',
   templateUrl: './view-voucher.component.html',
@@ -12,18 +13,23 @@ import { personaService } from 'src/app/services/persona.service';
 export class ViewVoucherComponent implements OnInit {
   tittle = 'envioCorreos';
   persona: persona[] = [];
+  usuario: usuario[] = [];
+  personacrear: persona = new persona();
   images: string [];
   @ViewChildren("Pdf")
   pdfs!: QueryList<any>;
+  mostrar:any;
+  roladmin:any;
 
   @ViewChild("mostrador", {
     read: ElementRef
   }) mostrador?: ElementRef;
-  constructor(private renderer: Renderer2 ,private storage: Storage, private perService: personaService, private httpclient:HttpClient){
+  constructor(private renderer: Renderer2 ,private storage: Storage, private perService: personaService, private httpclient:HttpClient, private usuarioService: UsuarioService){
     this.images=[];
     this.datos = new FormGroup({
       correo: new FormControl ('', [Validators.required, Validators.email])
     })
+    this.roladmin = 2;
   }
 
   enviarCorreo(){
@@ -39,6 +45,7 @@ export class ViewVoucherComponent implements OnInit {
   ngOnInit() {
     this.getImages();
     this.listarPersona();
+    this.roladmin = 2;
   }
   mostrarPDF(num:number){
     let pdffile = this.pdfs.get(num).nativeElement.files;
@@ -79,10 +86,13 @@ export class ViewVoucherComponent implements OnInit {
   listarPersona() {
     this.perService.list().subscribe(data => {
       this.persona = data;
-      console.log(this.persona)
     })
   }
 
   datos:FormGroup;
   
+  correo(correo: any){
+    this.mostrar = correo;
+  }
+
 }
